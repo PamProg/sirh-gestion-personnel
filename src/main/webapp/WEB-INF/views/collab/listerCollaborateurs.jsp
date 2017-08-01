@@ -9,5 +9,18 @@
 </head>
 <body>
 	<h1>Les collaborateurs y sont cools !</h1>
+	
+	<ul>
+	
+	<%
+		List<String> listeNoms = (List<String>)request.getAttribute("listeNoms");
+		for (String nom : listeNoms) {
+	%>
+		<li><%=nom%></li>
+	<%
+		}
+	%>
+	
+	</ul>
 </body>
 </html>
