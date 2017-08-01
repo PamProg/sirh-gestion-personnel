@@ -1,14 +1,12 @@
-target
 .DS_Store
 
-# 
-eclipse
+# eclipse
 .settings
 .project
 .classpath
+.tern-project
 
-# 
-intellij
+# intellij
 *.iml
 .idea
 
