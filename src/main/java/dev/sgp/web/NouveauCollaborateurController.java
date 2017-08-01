@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+import com.sun.mail.imap.protocol.UID;
+
 import dev.sgp.entite.Collaborateur;
 import dev.sgp.service.CollaborateurService;
 import dev.sgp.util.Constantes;
@@ -61,11 +63,9 @@ public class NouveauCollaborateurController extends HttpServlet {
 		
 		collabService.sauvegarderCollaborateur(collab);
 		
-//		List<Collaborateur> collaborateurs = collabService.listerCollaborateurs();
-//		req.setAttribute("listeCollabs", collaborateurs);
-		
-//		req.getRequestDispatcher("/WEB-INF/views/collab/listerCollaborateurs.jsp").forward(req, resp);
-		resp.sendRedirect("/sgp/collaborateurs/lister");
+//		resp.sendRedirect("/sgp/collaborateurs/lister");
+//		resp.sendRedirect("./lister");
+		resp.sendRedirect("lister");
 		 
 	}
 	
