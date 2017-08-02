@@ -4,19 +4,14 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Locale;
-import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.lang3.RandomStringUtils;
-
-import com.sun.mail.imap.protocol.UID;
 
 import dev.sgp.entite.Collaborateur;
 import dev.sgp.service.CollaborateurService;
@@ -56,7 +51,7 @@ public class NouveauCollaborateurController extends HttpServlet {
 		formatter = formatter.withLocale(Locale.FRANCE);
 		LocalDate dateDeNaissance = LocalDate.parse(req.getParameter("dateDeNaissance"), formatter);
 		
-		String matricule = RandomStringUtils.random(8);
+		String matricule = UUID.randomUUID().toString();
 		
 		Collaborateur collab = new Collaborateur(matricule, nom, prenom, dateDeNaissance, adresse, numeroDeSecuriteSociale, emailPro, photo, dateHeureCreation, actif);
 		
