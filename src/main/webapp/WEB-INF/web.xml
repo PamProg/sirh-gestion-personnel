@@ -31,7 +31,7 @@
 		<servlet-name>NouveauCollaborateurController</servlet-name>
 		<url-pattern>/collaborateurs/nouveau</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>StatistiquesController</servlet-name>
 		<servlet-class>dev.sgp.web.StatistiquesController</servlet-class>
@@ -49,5 +49,9 @@
 		<filter-name>VisiteFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+
+	<listener>
+		<listener-class>dev.sgp.listener.InitAppListener</listener-class>
+	</listener>
 
 </web-app>

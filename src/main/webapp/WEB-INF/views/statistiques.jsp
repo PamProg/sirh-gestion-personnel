@@ -11,8 +11,6 @@
 <body>
 	<h1>Statistiques</h1>
 	
-	<c:set var="visites" scope="application" value="${listeVisites}" />
-	
 	<table class="table">
 		<thead>
 			<tr>

@@ -5,7 +5,7 @@ import java.util.List;
 
 import dev.sgp.entite.VisiteWeb;
 
-public class VisiteService {
+public class VisiteWebService {
 
 	List<VisiteWeb> listeVisites = new ArrayList<>();
 

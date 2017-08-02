@@ -12,12 +12,12 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
 import dev.sgp.entite.VisiteWeb;
-import dev.sgp.service.VisiteService;
+import dev.sgp.service.VisiteWebService;
 import dev.sgp.util.Constantes;
 
 public class FrequentationFilter implements Filter {
 
-	private VisiteService visiteService = Constantes.VISITE_SERVICE;
+	private VisiteWebService visiteService = Constantes.VISITE_SERVICE;
 	private FilterConfig config = null;
 	
 	@Override

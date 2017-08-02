@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dev.sgp.entite.VisiteWeb;
-import dev.sgp.service.VisiteService;
+import dev.sgp.service.VisiteWebService;
 import dev.sgp.util.Constantes;
 
 public class StatistiquesController extends HttpServlet {
 	
-	private VisiteService visiteService = Constantes.VISITE_SERVICE;
+	private VisiteWebService visiteService = Constantes.VISITE_SERVICE;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
