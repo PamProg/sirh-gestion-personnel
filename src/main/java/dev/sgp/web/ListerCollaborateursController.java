@@ -12,7 +12,6 @@ import dev.sgp.entite.Collaborateur;
 import dev.sgp.service.CollaborateurService;
 import dev.sgp.util.Constantes;
 
-@SuppressWarnings("serial")
 public class ListerCollaborateursController extends HttpServlet {
 
 	private CollaborateurService collabService = Constantes.COLLAB_SERVICE;

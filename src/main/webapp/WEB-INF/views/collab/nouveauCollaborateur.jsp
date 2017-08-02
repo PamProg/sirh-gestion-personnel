@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SGP - App</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/bootstrap-3.3.7-dist/css/bootstrap.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>SGP - App</title>
+	<link rel="stylesheet" href="<c:url value ='/bootstrap-3.3.7-dist/css/bootstrap.css'></c:url>">
 </head>
 <body>
 
@@ -55,7 +55,7 @@
 					<textarea class="form-control" id="adresse" name="adresse"></textarea>
 				</div>
 			</div>
-
+			
 			<!-- Text input-->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="nir">Numéro de
