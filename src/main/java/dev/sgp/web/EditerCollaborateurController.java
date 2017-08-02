@@ -7,10 +7,12 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/collaborateurs/editer")
 public class EditerCollaborateurController extends HttpServlet {
 
 	@Override
@@ -51,7 +53,7 @@ public class EditerCollaborateurController extends HttpServlet {
 		} else {
 			resp.setContentType("text/html");
 			resp.setStatus(400);
-			resp.getWriter().write("Les paramètres suivants sont incorrects :");
+			resp.getWriter().write("Les paramètres suivants sont incorrects : ");
 			paramsNull.stream().forEach(resp.getWriter()::write);
 		}
 	}

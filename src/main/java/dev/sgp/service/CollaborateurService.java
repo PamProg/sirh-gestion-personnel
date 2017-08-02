@@ -1,19 +1,36 @@
 package dev.sgp.service;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
+import java.util.UUID;
 
 import dev.sgp.entite.Collaborateur;
+import dev.sgp.exception.NirDontMatchException;
 
 public class CollaborateurService {
 
-	List<Collaborateur> listeCollaborateurs = new ArrayList<>();
+	private List<Collaborateur> listeCollaborateurs = new ArrayList<>();
 
 	public List<Collaborateur> listerCollaborateurs() {
 		return listeCollaborateurs;
 	}
 
-	public void sauvegarderCollaborateur(Collaborateur collab) {
+	public void sauvegarderCollaborateur(Collaborateur collab) throws NirDontMatchException {
+		
+		collab.setPhoto("images/portrait/" + collab.getNom() + ".jpg");
+		collab.setDateHeureCreation(ZonedDateTime.now());
+		collab.setActif(true);
+		collab.setMatricule(UUID.randomUUID().toString());
+		String societe = ResourceBundle.getBundle("application").getString("nomSociete");
+		collab.setEmailPro(collab.getPrenom() + "." + collab.getNom() + "@" + societe);
+		
+		if(!collab.getNumeroDeSecuriteSociale().matches("\\w{15}")) {
+			throw new NirDontMatchException("Le NIR doit compotrer exactement 15 caractères");
+		}
+		
+		
 		listeCollaborateurs.add(collab);
 	}
 }

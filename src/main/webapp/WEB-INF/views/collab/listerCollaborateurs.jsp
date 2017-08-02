@@ -9,11 +9,11 @@
 	<link rel="stylesheet" href="<c:url value ='/bootstrap-3.3.7-dist/css/bootstrap.css'></c:url>">
 </head>
 <body>
-	<h1>Les collaborateurs y sont cools !</h1>
+	<h1>Liste des collaborateurs</h1>
 	
-	<ul>
+	<ul class="list-group">
 		<c:forEach var="col" items="${listeCollabs}">
-			<li>${col.nom}</li>
+			<li class="list-group-item">${col.nom} ${col.prenom} ${col.emailPro}</li>
 		</c:forEach>
 	</ul>
 </body>
