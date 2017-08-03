@@ -25,11 +25,11 @@
 			
 				<div class="col-md-4">
 					<div class="thumbnail">
-						<h3>${col.nom} ${col.prenom}</h2>
+						<h4>${col.nom} ${col.prenom}</h4>
 						<hr>
 						<div class="row">
 							<div class="col-md-4">
-								<img src="" width="64px" height="64px">					
+								<img src="${col.photo}" width="64px" height="64px">					
 							</div>
 							<div class="col-md-4">
 								<p>Fonction</p>		

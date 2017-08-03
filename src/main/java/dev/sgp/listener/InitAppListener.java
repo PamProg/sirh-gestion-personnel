@@ -32,9 +32,9 @@ public class InitAppListener implements ServletContextListener {
 				e.printStackTrace();
 			}
 		}
-		
+
 		List<Departement> departements = initDepartements();
-		for(Departement d : departements) {
+		for (Departement d : departements) {
 			departService.sauvegarderDepartement(d);
 		}
 	}
@@ -43,26 +43,28 @@ public class InitAppListener implements ServletContextListener {
 	public void contextDestroyed(ServletContextEvent sce) {
 
 	}
-	
+
 	private List<Collaborateur> initCollaborateurs() {
 		List<Collaborateur> list = new ArrayList<>();
 		list.add(new Collaborateur("1", "Albert", "Dupont", LocalDate.of(1993, 8, 26), "46 de la Boustifaille",
-				"123456789123456", "mail@mail.com", "cheminDeLimage.jpg", ZonedDateTime.now(), true, new Departement(1, "Informatique"), "Développeur"));
+				"123456789123456", "mail@mail.com", "../../resources/homme.jpg", ZonedDateTime.now(), true,
+				new Departement(1, "Informatique"), "Développeur", "BMM", "BIC", "IBAN"));
 		for (int i = 0; i < 10; i++) {
 			list.add(new Collaborateur("m" + i, "nom" + i, "prenom" + i, LocalDate.of(i, 8, 26), "adresse" + i,
-					"123456789123456", "mail" + i, "cheminPhoto" + i + ".jpg", ZonedDateTime.now(), true, new Departement(i, "Comptabilité"), "Comptable"));
+					"123456789123456", "mail" + i, "../../resources/homme.jpg" + i + ".jpg", ZonedDateTime.now(), true,
+					new Departement(i, "Comptabilité"), "Comptable", "Banque"+i, "BIC"+i, "IBAN"+i));
 		}
 		return list;
 	}
-	
+
 	private List<Departement> initDepartements() {
 		List<Departement> list = new ArrayList<>();
-		
+
 		list.add(new Departement(1, "Comptabilité"));
 		list.add(new Departement(2, "Ressources Humaines"));
 		list.add(new Departement(3, "Informatique"));
 		list.add(new Departement(4, "Administratif"));
-		
+
 		return list;
 	}
 }

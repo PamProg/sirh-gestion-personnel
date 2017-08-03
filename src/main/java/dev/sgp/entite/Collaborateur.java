@@ -17,6 +17,9 @@ public class Collaborateur {
 	private Boolean actif;
 	private Departement departement;
 	private String intitulePoste;
+	private String banque;
+	private String bic;
+	private String iban;
 	
 	/**
 	 * @param matricule
@@ -74,6 +77,43 @@ public class Collaborateur {
 		this.actif = actif;
 		this.departement = departement;
 		this.intitulePoste = intitulePoste;
+	}
+
+	/**
+	 * @param matricule
+	 * @param nom
+	 * @param prenom
+	 * @param dateDeNaissance
+	 * @param adresse
+	 * @param numeroDeSecuriteSociale
+	 * @param emailPro
+	 * @param photo
+	 * @param dateHeureCreation
+	 * @param actif
+	 * @param departement
+	 * @param intitulePoste
+	 * @param banque
+	 * @param bic
+	 * @param iban
+	 */
+	public Collaborateur(String matricule, String nom, String prenom, LocalDate dateDeNaissance, String adresse,
+			String numeroDeSecuriteSociale, String emailPro, String photo, ZonedDateTime dateHeureCreation,
+			Boolean actif, Departement departement, String intitulePoste, String banque, String bic, String iban) {
+		this.matricule = matricule;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateDeNaissance = dateDeNaissance;
+		this.adresse = adresse;
+		this.numeroDeSecuriteSociale = numeroDeSecuriteSociale;
+		this.emailPro = emailPro;
+		this.photo = photo;
+		this.dateHeureCreation = dateHeureCreation;
+		this.actif = actif;
+		this.departement = departement;
+		this.intitulePoste = intitulePoste;
+		this.banque = banque;
+		this.bic = bic;
+		this.iban = iban;
 	}
 
 	/**
@@ -223,5 +263,47 @@ public class Collaborateur {
 	 */
 	public void setIntitulePoste(String intitulePoste) {
 		this.intitulePoste = intitulePoste;
+	}
+
+	/**
+	 * @return the banque
+	 */
+	public String getBanque() {
+		return banque;
+	}
+
+	/**
+	 * @param banque the banque to set
+	 */
+	public void setBanque(String banque) {
+		this.banque = banque;
+	}
+
+	/**
+	 * @return the bic
+	 */
+	public String getBic() {
+		return bic;
+	}
+
+	/**
+	 * @param bic the bic to set
+	 */
+	public void setBic(String bic) {
+		this.bic = bic;
+	}
+
+	/**
+	 * @return the iban
+	 */
+	public String getIban() {
+		return iban;
+	}
+
+	/**
+	 * @param iban the iban to set
+	 */
+	public void setIban(String iban) {
+		this.iban = iban;
 	}
 }

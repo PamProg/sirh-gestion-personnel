@@ -19,12 +19,11 @@ public class CollaborateurService {
 
 	public void sauvegarderCollaborateur(Collaborateur collab) throws NirDontMatchException {
 		
-		collab.setPhoto("images/portrait/" + collab.getNom() + ".jpg");
 		collab.setDateHeureCreation(ZonedDateTime.now());
 		collab.setActif(true);
 		collab.setMatricule(UUID.randomUUID().toString());
 		String societe = ResourceBundle.getBundle("application").getString("nomSociete");
-		collab.setEmailPro(collab.getPrenom() + "." + collab.getNom() + "@" + societe);
+		collab.setEmailPro(collab.getPrenom().toLowerCase() + "." + collab.getNom().toLowerCase() + "@" + societe);
 		
 		if(!collab.getNumeroDeSecuriteSociale().matches("\\w{15}")) {
 			throw new NirDontMatchException("Le NIR doit compotrer exactement 15 caractères");
