@@ -16,8 +16,7 @@ public class DepartementService {
 	
 	public List<Departement> listerDepartements() {
 		TypedQuery<Departement> query = em.createQuery("select d from Departement d", Departement.class);
-		List<Departement> listeDepartements = query.getResultList();
-		return listeDepartements;
+		return query.getResultList();
 	}
 
 	public void sauvegarderDepartement(Departement depart) {

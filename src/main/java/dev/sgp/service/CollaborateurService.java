@@ -25,8 +25,7 @@ public class CollaborateurService {
 	
 	public List<Collaborateur> listerCollaborateurs() {
 		TypedQuery<Collaborateur> query = em.createQuery("select c from Collaborateur c", Collaborateur.class);
-		List<Collaborateur> listeCollaborateurs = query.getResultList(); 
-		return listeCollaborateurs;
+		return query.getResultList(); 
 	}
 
 	public void sauvegarderCollaborateur(Collaborateur collab) throws NirDontMatchException {

@@ -16,8 +16,7 @@ public class VisiteWebService {
 
 	public List<VisiteWeb> listerVisites() {
 		TypedQuery<VisiteWeb> query = em.createQuery("select v from VisiteWeb v", VisiteWeb.class);
-		List<VisiteWeb> listeVisites = query.getResultList();
-		return listeVisites;
+		return query.getResultList();
 	}
 
 	public void sauvegarderVisite(VisiteWeb visite) {

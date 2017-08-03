@@ -17,8 +17,7 @@ public class ActiviteService {
 
 	public List<CollabEvt> listerActivitesCollab() {
 		TypedQuery<CollabEvt> query = em.createQuery("select c from CollabEvt c", CollabEvt.class);
-		List<CollabEvt> listeCollabEvts = query.getResultList();
-		return listeCollabEvts;
+		return query.getResultList();
 	}
 	
 	public void recevoirEvenementCollab(@Observes CollabEvt evt) {

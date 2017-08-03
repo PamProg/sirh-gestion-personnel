@@ -63,37 +63,6 @@ public class Collaborateur {
 		this.dateHeureCreation = dateHeureCreation;
 		this.actif = actif;
 	}
-	
-	/**
-	 * @param matricule
-	 * @param nom
-	 * @param prenom
-	 * @param dateDeNaissance
-	 * @param adresse
-	 * @param numeroDeSecuriteSociale
-	 * @param emailPro
-	 * @param photo
-	 * @param dateHeureCreation
-	 * @param actif
-	 * @param departement
-	 * @param intitulePoste
-	 */
-	public Collaborateur(String matricule, String nom, String prenom, LocalDate dateDeNaissance, String adresse,
-			String numeroDeSecuriteSociale, String emailPro, String photo, ZonedDateTime dateHeureCreation,
-			Boolean actif, Departement departement, String intitulePoste) {
-		this.matricule = matricule;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.dateDeNaissance = dateDeNaissance;
-		this.adresse = adresse;
-		this.numeroDeSecuriteSociale = numeroDeSecuriteSociale;
-		this.emailPro = emailPro;
-		this.photo = photo;
-		this.dateHeureCreation = dateHeureCreation;
-		this.actif = actif;
-		this.departement = departement;
-		this.intitulePoste = intitulePoste;
-	}
 
 	/**
 	 * @param matricule
