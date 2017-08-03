@@ -1,10 +1,20 @@
 package dev.sgp.entite;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class VisiteWeb {
 
+	@Id
 	private Integer id;
+	
 	private String chemin;
 	private Integer tempsExecution;
+	
+	public VisiteWeb() {
+		
+	}
 	
 	/**
 	 * @param id

@@ -23,7 +23,7 @@
 				<tr>
 					<td>${evt.dateHeure}</td>
 					<c:choose>
-						<c:when test="${evt.type == TypeCollabEvt.CREATION_COLLAB}" >
+						<c:when test="${evt.type == 'CREATION_COLLAB'}" >
 							<td>Création d'un nouveau collaborateur - matricule : ${evt.matricule}</td>
 						</c:when>
 						<c:otherwise>

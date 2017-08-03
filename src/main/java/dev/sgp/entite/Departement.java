@@ -1,9 +1,18 @@
 package dev.sgp.entite;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Departement {
 
-	Integer id;
-	String nom;
+	@Id
+	private Integer id;
+	private String nom;
+	
+	public Departement() {
+		
+	}
 	
 	/**
 	 * @param id
