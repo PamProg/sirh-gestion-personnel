@@ -49,11 +49,11 @@ public class InitAppListener implements ServletContextListener {
 	private List<Collaborateur> initCollaborateurs(List<Departement> departements) {
 		List<Collaborateur> list = new ArrayList<>();
 		list.add(new Collaborateur("1", "Albert", "Dupont", LocalDate.of(1993, 8, 26), "46 de la Boustifaille",
-				"123456789123456", "mail@mail.com", "../../resources/homme.jpg", ZonedDateTime.now(), true,
+				"123456789123456", "mail@mail.com", "images/homme.jpg", ZonedDateTime.now(), true,
 				departements.get(3), "Développeur", "BMM", "BIC", "IBAN"));
 		for (int i = 0; i < 10; i++) {
 			list.add(new Collaborateur("m" + i, "nom" + i, "prenom" + i, LocalDate.of(i, 8, 26), "adresse" + i,
-					"123456789123456", "mail" + i, "../../resources/homme.jpg" + i + ".jpg", ZonedDateTime.now(), true,
+					"123456789123456", "mail" + i, "images/homme" + i + ".jpg", ZonedDateTime.now(), true,
 					departements.get(1), "Comptable", "Banque"+i, "BIC"+i, "IBAN"+i));
 		}
 		return list;

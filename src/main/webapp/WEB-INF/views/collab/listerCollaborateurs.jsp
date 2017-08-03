@@ -23,7 +23,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-md-4 col-sm-4 col-xs-4">
-								<img src="${col.photo}" width="64px" height="64px">					
+								<img src="../${col.photo}" width="100%">					
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4">
 								<p>Fonction</p>		
