@@ -5,6 +5,7 @@ import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -14,13 +15,12 @@ import dev.sgp.entite.Departement;
 import dev.sgp.exception.NirDontMatchException;
 import dev.sgp.service.CollaborateurService;
 import dev.sgp.service.DepartementService;
-import dev.sgp.util.Constantes;
 
 @WebListener
 public class InitAppListener implements ServletContextListener {
 
-	private CollaborateurService collabService = Constantes.COLLAB_SERVICE;
-	private DepartementService departService = Constantes.DEPART_SERVICE;
+	@Inject private CollaborateurService collabService;
+	@Inject private DepartementService departService;
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {

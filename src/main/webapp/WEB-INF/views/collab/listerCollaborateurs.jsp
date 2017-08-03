@@ -11,33 +11,27 @@
 <body>
 	<h1>Les collaborateurs</h1>
 	
-<!-- 	<ul class="list-group"> -->
-<%-- 		<c:forEach var="col" items="${listeCollabs}"> --%>
-<%-- 			<li class="list-group-item">${col.nom} ${col.prenom} ${col.emailPro}</li> --%>
-<%-- 		</c:forEach> --%>
-<!-- 	</ul> -->
-
 
 	<div class="container">
 		<div class="row">
 		
 			<c:forEach var="col" items="${listeCollabs}">
 			
-				<div class="col-md-4">
+				<div class="col-md-4 col-sm-6">
 					<div class="thumbnail">
 						<h4>${col.nom} ${col.prenom}</h4>
 						<hr>
 						<div class="row">
-							<div class="col-md-4">
+							<div class="col-md-4 col-sm-4 col-xs-4">
 								<img src="${col.photo}" width="64px" height="64px">					
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-4 col-sm-4 col-xs-4">
 								<p>Fonction</p>		
 								<p>Département</p>		
 								<p>Email</p>		
 								<p>Adresse</p>		
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-4 col-sm-4 col-xs-4 col-xs-4">
 								<p>${col.intitulePoste}</p>							
 								<p>${col.departement.nom}</p>							
 								<p>${col.emailPro}</p>							
