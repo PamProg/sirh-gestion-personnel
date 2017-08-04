@@ -12,6 +12,8 @@
 </head>
 <body>
 
+	<c:import url="../menu.jsp"></c:import>
+
 	<form class="form-horizontal" method="post">
 		<fieldset>
 
@@ -23,7 +25,7 @@
 				<label class="col-md-4 control-label" for="nom">Nom</label>
 				<div class="col-md-4">
 					<input id="nom" name="nom" placeholder="Nom"
-						class="form-control input-md" required="" type="text"> <span
+						class="form-control input-md" required type="text"> <span
 						class="help-block">Ne doit pas contenir de chiffres</span>
 				</div>
 			</div>
@@ -33,7 +35,7 @@
 				<label class="col-md-4 control-label" for="prenom">Prénom</label>
 				<div class="col-md-4">
 					<input id="prenom" name="prenom" placeholder="Prénom"
-						class="form-control input-md" required="" type="text"> <span
+						class="form-control input-md" required type="text"> <span
 						class="help-block">Ne doit pas contenir de chiffres</span>
 				</div>
 			</div>
@@ -45,7 +47,7 @@
 				<div class="col-md-4">
 					<input id="dateDeNaissance" name="dateDeNaissance"
 						placeholder="Date de naissance" class="form-control input-md"
-						required="" type="text"> <span class="help-block">Format
+						required type="text"> <span class="help-block">Format
 						: jj/mm/aaaa. Ex : 23/11/1995</span>
 				</div>
 			</div>
@@ -64,7 +66,7 @@
 					Sécurité sociale</label>
 				<div class="col-md-4">
 					<input id="nir" name="nir" placeholder="Numéro de Sécurité sociale"
-						class="form-control input-md" required="" type="text"> <span
+						class="form-control input-md" required type="text"> <span
 						class="help-block">Doit contenir 15 caractères</span>
 				</div>
 				<c:if test="${listErreurs.nir != null}"><span class="alert alert-danger alert-dismissible" role="alert">${listErreurs.nir}</span></c:if>

@@ -1,7 +1,6 @@
 package dev.sgp.service;
 
 import java.time.ZonedDateTime;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

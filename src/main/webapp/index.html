@@ -3,8 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>SGP App</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+	<ul class="nav nav-pills">
+		<li role="presentation"><a href="/sgp">Accueil</a></li>
+	
+		<li role="presentation" class="dropdown">
+			<a
+				class="dropdown-toggle" data-toggle="dropdown"
+				href="#" role="button" aria-haspopup="true"
+				aria-expanded="false">Collaborateurs <span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<li role="presentation"><a href="/sgp/collaborateurs/lister">Lister collaborateurs</a></li>
+				<li role="presentation"><a href="/sgp/collaborateurs/nouveau">Créer collaborateur</a></li>
+			</ul>
+		</li>
+	
+		<li role="presentation"><a href="/sgp/statistiques">Statistiques</a></li>
+		<li role="presentation"><a href="/sgp/activites">Activités</a></li>
+	</ul>
+
 	<h1>SGP Application super !</h1>
 </body>
 </html>
