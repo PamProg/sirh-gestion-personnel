@@ -44,4 +44,31 @@ public class CollaborateurService {
 		
 		collabEvt.fire(new CollabEvt(collab.getDateHeureCreation(), TypeCollabEvt.CREATION_COLLAB, collab.getMatricule()));
 	}
+
+	public List<Collaborateur> listByDepartement(Integer departementId) {
+		TypedQuery<Collaborateur> query = em.createQuery("select c from Collaborateur c where c.departement.id=:departementId", Collaborateur.class)
+											.setParameter("departementId", departementId);
+		return query.getResultList();
+	}
+
+	public Collaborateur findByMatricule(String mat) {
+		TypedQuery<Collaborateur> query = em.createQuery("select c from Collaborateur c where c.matricule=:mat", Collaborateur.class)
+				.setParameter("mat", mat);
+		return query.getSingleResult();
+	}
+
+	public void updateCollab(String mat, Collaborateur collab) {
+		// On récupère le collaborateur de matricule mat
+		TypedQuery<Integer> query = em.createQuery("select c.id from Collaborateur c where c.matricule=:mat", Integer.class)
+											.setParameter("mat", mat);
+		Integer id = query.getSingleResult();
+		
+		// Si il existe...
+		if(id != null) {
+			// ...on remplace son id par l'id du "nouveau" collaborateur...
+			collab.setId(id);
+			// ...puis on "écrase" les données du nouveau collaborateur dans celui en base
+			em.merge(collab);
+		} // TODO gérer le else{}
+	}
 }

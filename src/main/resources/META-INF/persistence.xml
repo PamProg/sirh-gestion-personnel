@@ -13,6 +13,7 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 			<property name="javax.persistence.schema-generation.database.action"
 				value="drop-and-create" />
 			<!-- Permet de transformer les champs camelCase en champ_avec_underscore (ne fonctionne pas/plus...) -->
+			<!-- Voir : https://stackoverflow.com/questions/32437202/improvednamingstrategy-no-longer-working-in-hibernate-5 -->
 			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"></property>
 			<!-- Permet de faire en sorte que le moteur de base de données par défaut soit InnoDB sur MySQL (et non MyISAM) -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
