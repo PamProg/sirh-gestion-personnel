@@ -1,6 +1,7 @@
 package dev.sgp.rest;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -44,8 +45,20 @@ public class CollaborateurResource {
 		collabService.updateCollab(matricule, collab);
 	}
 	
-	
+	@GET
+	@Path("/{matricule}/banque")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Map<String, String> getCoordonneesBancaire(@PathParam("matricule") String mat) {
+		return collabService.getCoordonneesBancaire(mat);
+	}
 
+	@PUT
+	@Path("/{matricule}/banque")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public void modifyBanque(@PathParam("matricule") String matricule, Map<String, String> coordonnees) {
+		collabService.updateCoordonneesBancaire(matricule, coordonnees);
+	}
 	
 	
 }

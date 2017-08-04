@@ -1,7 +1,10 @@
 package dev.sgp.service;
 
 import java.time.ZonedDateTime;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
@@ -53,14 +56,15 @@ public class CollaborateurService {
 
 	public Collaborateur findByMatricule(String mat) {
 		TypedQuery<Collaborateur> query = em.createQuery("select c from Collaborateur c where c.matricule=:mat", Collaborateur.class)
-				.setParameter("mat", mat);
+											.setParameter("mat", mat);
 		return query.getSingleResult();
 	}
 
+	// TODO : vérifier que les champs nom, prenom, adresse, nir ne soient pas modifiables
 	public void updateCollab(String mat, Collaborateur collab) {
 		// On récupère le collaborateur de matricule mat
 		TypedQuery<Integer> query = em.createQuery("select c.id from Collaborateur c where c.matricule=:mat", Integer.class)
-											.setParameter("mat", mat);
+									  .setParameter("mat", mat);
 		Integer id = query.getSingleResult();
 		
 		// Si il existe...
@@ -70,5 +74,28 @@ public class CollaborateurService {
 			// ...puis on "écrase" les données du nouveau collaborateur dans celui en base
 			em.merge(collab);
 		} // TODO gérer le else{}
+	}
+
+	public Map<String, String> getCoordonneesBancaire(String mat) {
+		TypedQuery<Collaborateur> query = em.createQuery("select c from Collaborateur c where c.matricule=:mat", Collaborateur.class)
+				  .setParameter("mat", mat);
+		
+		Collaborateur col = query.getSingleResult();
+		Map<String, String> map = new HashMap<>();
+		map.put("banque", col.getBanque());
+		map.put("bic", col.getBic());
+		map.put("iban", col.getIban());
+		return map;	
+	}
+
+	public void updateCoordonneesBancaire(String mat, Map<String, String> coordonnees) {
+		TypedQuery<Collaborateur> query = em.createQuery("select c from Collaborateur c where c.matricule=:mat", Collaborateur.class)
+				.setParameter("mat", mat);
+		Collaborateur c = query.getSingleResult();
+		
+		c.setBanque(coordonnees.get("banque"));
+		c.setBic(coordonnees.get("bic"));
+		c.setIban(coordonnees.get("iban"));
+		em.persist(c);
 	}
 }
